@@ -1,0 +1,87 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:viz="sap.viz.ui5.controls" xmlns:layout="sap.ui.layout"
+	xmlns:mvc="sap.ui.core.mvc" xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds" xmlns:viz.data="sap.viz.ui5.data"
+	xmlns:microchart="sap.suite.ui.microchart">
+	<Popover title="Average Ratings" class="sapUiContentPadding" contentWidth="700px" contentHeight="600px">
+		<HBox>
+			<Label text="Average Rating : {chart>/average} " labelFor="avgRating" class="SapUiLargeMarginTop"></Label>
+			<RatingIndicator id="avgRating" enabled="false" maxValue="5" class="sapUiSmallMarginBottom" value="{chart>/average}" iconSize="32px"
+				tooltip="Rating Tooltip"/>
+		</HBox>
+		<HBox>
+			<Label text="Durability : " class="SapUiLargeMarginTop"></Label>
+			<microchart:BulletMicroChart size="L"  targetValue="5"  class="sapUiSmallMargin">
+				<microchart:actual>
+					<microchart:BulletMicroChartData value="{chart>/Durability}" color="Good"/>
+				</microchart:actual>
+				<microchart:thresholds>
+					<microchart:BulletMicroChartData value="0" color="Error"/>
+					<microchart:BulletMicroChartData value="1" color="Critical"/>
+					<microchart:BulletMicroChartData value="2" color="Critical"/>
+					<microchart:BulletMicroChartData value="3" color="Neutral"/>
+					<microchart:BulletMicroChartData value="3" color="Good"/>
+				</microchart:thresholds>
+			</microchart:BulletMicroChart>
+		</HBox>
+		<HBox>
+			<Label text="Longevity : " class="SapUiLargeMarginTop"></Label>
+			<microchart:BulletMicroChart size="L"  targetValue="5"  class="sapUiSmallMargin">
+				<microchart:actual>
+					<microchart:BulletMicroChartData value="{chart>/Longevity}" color="Good"/>
+				</microchart:actual>
+				<microchart:thresholds>
+					<microchart:BulletMicroChartData value="0" color="Error"/>
+					<microchart:BulletMicroChartData value="1" color="Critical"/>
+					<microchart:BulletMicroChartData value="2" color="Critical"/>
+					<microchart:BulletMicroChartData value="3" color="Neutral"/>
+					<microchart:BulletMicroChartData value="3" color="Good"/>
+				</microchart:thresholds>
+			</microchart:BulletMicroChart>
+		</HBox>
+		<HBox>
+			<Label text="Suitability : " class="SapUiLargeMarginTop"></Label>
+			<microchart:BulletMicroChart size="L"  targetValue="5"  class="sapUiSmallMargin">
+				<microchart:actual>
+					<microchart:BulletMicroChartData value="{chart>/Suitability}" color="Good"/>
+				</microchart:actual>
+				<microchart:thresholds>
+					<microchart:BulletMicroChartData value="0" color="Error"/>
+					<microchart:BulletMicroChartData value="1" color="Critical"/>
+					<microchart:BulletMicroChartData value="2" color="Critical"/>
+					<microchart:BulletMicroChartData value="3" color="Neutral"/>
+					<microchart:BulletMicroChartData value="3" color="Good"/>
+				</microchart:thresholds>
+			</microchart:BulletMicroChart>
+		</HBox>
+		<HBox>
+			<Label text="Value : " class="SapUiLargeMarginTop"></Label>
+			<microchart:BulletMicroChart size="L"  targetValue="5"  class="sapUiSmallMargin sapUiLargeMarginBegin">
+				<microchart:actual>
+					<microchart:BulletMicroChartData value="{chart>/Value}" color="Good"/>
+				</microchart:actual>
+				<microchart:thresholds>
+					<microchart:BulletMicroChartData value="0" color="Error"/>
+					<microchart:BulletMicroChartData value="1" color="Critical"/>
+					<microchart:BulletMicroChartData value="2" color="Critical"/>
+					<microchart:BulletMicroChartData value="3" color="Neutral"/>
+					<microchart:BulletMicroChartData value="3" color="Good"/>
+				</microchart:thresholds>
+			</microchart:BulletMicroChart>
+		</HBox>
+		<!--	<viz:VizFrame id="idVizFrame" uiConfig="{applicationSet:'fiori'}" height='20%' width="20%" vizType='bar'>
+			<viz:dataset>
+				<viz.data:FlattenedDataset data="{chart>/}">
+					<viz.data:dimensions>
+						<viz.data:DimensionDefinition name="category" value="{chart>category}"/>
+					</viz.data:dimensions>
+					<viz.data:measures>
+						<viz.data:MeasureDefinition name="rating" value="{chart>rating}"/>
+					</viz.data:measures>
+				</viz.data:FlattenedDataset>
+			</viz:dataset>
+			<viz:feeds>
+				<viz.feeds:FeedItem uid="categoryAxis" type="Dimension" values="category"/>
+				<viz.feeds:FeedItem uid="valueAxis" type="Measure" values="rating"/>
+			</viz:feeds>
+		</viz:VizFrame>-->
+	</Popover>
+</core:FragmentDefinition>

@@ -1,0 +1,45 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core">
+	<Dialog id="addReviewDialog" title="Add Review">
+		<f:SimpleForm id="SimpleFormDisplay354wideDual" editable="false" layout="ResponsiveGridLayout" labelSpanXL="4" labelSpanL="3" labelSpanM="4"
+			labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="4" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="1" columnsM="1"
+			singleContainerFullSize="false">
+			<f:content>
+				<Label text="Choose Asset"/>
+				<Select id="idAssetSelect" items="{AssetReviewModel>/Assets}" selectedKey="{NewReviewModel>/AssetName}">
+					<core:Item text="{AssetReviewModel>AssetName}" key="{AssetReviewModel>AssetName}"></core:Item>
+				</Select>
+				<Label text="Select Reviewer"/>
+				<Select id="idReviewerSelect" items="{AssetReviewModel>/Reviewers}" selectedKey="{NewReviewModel>/ReviewerName}">
+					<core:Item key="{AssetReviewModel>AssetName}" text="{AssetReviewModel>AssetName}"></core:Item>
+				</Select>
+				<Label text="Suitability"/>
+				<HBox>
+					<RatingIndicator id="RI_L" maxValue="5" class="sapUiSmallMarginBottom" value="{NewReviewModel>/Suitability}" iconSize="32px"
+						tooltip="Rating Tooltip"/>
+					<Input value="{NewReviewModel>/SuitabilityComment}" class="sapUiLargeMarginBegin" placeholder="Enter comment here..."/>
+				</HBox>
+				<Label text="Value"/>
+				<HBox>
+					<RatingIndicator maxValue="5" class="sapUiSmallMarginBottom" value="{NewReviewModel>/Value}" iconSize="32px" tooltip="Rating Tooltip"/>
+					<Input value="{NewReviewModel>/ValueComment}" class="sapUiLargeMarginBegin" placeholder="Enter comment here..."/>
+				</HBox>
+				<Label text="Durability"/>
+				<HBox>
+					<RatingIndicator maxValue="5" class="sapUiSmallMarginBottom" value="{NewReviewModel>/Durability}" iconSize="32px" tooltip="Rating Tooltip"/>
+					<Input value="{NewReviewModel>/DurabilityComment}" class="sapUiLargeMarginBegin" placeholder="Enter comment here..."/>
+				</HBox>
+				<Label text="Longevity"/>
+				<HBox>
+					<RatingIndicator maxValue="5" class="sapUiSmallMarginBottom" value="{NewReviewModel>/Longevity}" iconSize="32px" tooltip="Rating Tooltip"/>
+					<Input value="{NewReviewModel>/LongevityComment}" class="sapUiLargeMarginBegin" placeholder="Enter comment here..."/>
+				</HBox>
+			</f:content>
+		</f:SimpleForm>
+		<beginButton>
+			<Button text="Add Review" type="Accept" press="onPressSaveReview"/>
+		</beginButton>
+		<endButton>
+			<Button text="Cancel" press="closeDialog"/>
+		</endButton>
+	</Dialog>
+</core:FragmentDefinition>

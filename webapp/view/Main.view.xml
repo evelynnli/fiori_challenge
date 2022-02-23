@@ -1,0 +1,84 @@
+<mvc:View 
+controllerName="T180.fiorichallenge.controller.Main" 
+xmlns:mvc="sap.ui.core.mvc" 
+displayBlock="true" 
+xmlns="sap.m">
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page id="page" title="{i18n>pageTitle}">
+					<content>
+                        <Text text="entries of Reviews: {AssetReviewModel>/totalReviews}" id="exampleText" class="sapUiSmallMargin"/>
+						<Table id="idReviewsTable" items="{AssetReviewModel>/Reviews}">
+							<headerToolbar>
+								<Toolbar>
+									<content>
+										<Title text="Reviews" level="H2"/>
+										<ToolbarSpacer/>
+										<Button text="Add Review" press="onAddReview"/>
+									</content>
+								</Toolbar>
+							</headerToolbar>
+							<columns>
+								<Column width="12em">
+									<Text text="Asset Name"/>
+								</Column>
+								<Column minScreenWidth="Tablet" demandPopin="true">
+									<Text text="Suitability"/>
+								</Column>
+								<Column minScreenWidth="Desktop" demandPopin="true">
+									<Text text="Suitability Comment"/>
+								</Column>
+								<Column minScreenWidth="Desktop" demandPopin="true" hAlign="Center">
+									<Text text="Value"/>
+								</Column>
+								<Column >
+									<Text text="Value Comment"/>
+								</Column>
+								<Column hAlign="End">
+									<Text text="Durability"/>
+								</Column>
+								<Column >
+									<Text text="Durability Comment"/>
+								</Column>
+								<Column hAlign="End">
+									<Text text="Longevity"/>
+								</Column>
+								<Column >
+									<Text text="Longevity Comment"/>
+								</Column>
+								<Column >
+									<Text text="Summary Comments"/>
+								</Column>
+								<Column hAlign="End">
+									<Text text="Submission Date"/>
+								</Column>
+								<Column hAlign="End">
+									<Text text="Submitted By"/>
+								</Column>
+							</columns>
+							<items>
+								<ColumnListItem>
+									<cells>
+										<Link text="{AssetReviewModel>AssetName}" press="onTableRowSelected"/>
+										<Text text="{AssetReviewModel>Suitability}"/>
+										<Text text="{AssetReviewModel>SuitabilityComment}"/>
+										<Text text="{AssetReviewModel>Value}"/>
+										<Text text="{AssetReviewModel>ValueComment}"/>
+										<Text text="{AssetReviewModel>Durability}"/>
+										<Text text="{AssetReviewModel>DurabilityComment}"/>
+										<Text text="{AssetReviewModel>Longevity}"/>
+										<Text text="{AssetReviewModel>LongevityComment}"/>
+										<Text text="{AssetReviewModel>SummaryComments}"/>
+										<Text text="{path: 'AssetReviewModel>SubmissionDate'}"/>
+										<Text text="{AssetReviewModel>SubmittedBy}"/>
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+					</content>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>
